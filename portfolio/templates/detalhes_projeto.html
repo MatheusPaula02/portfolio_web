@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}{{projeto.título}}Detalhes | Meu Portfolio{% endblock %}
+{% block content %}
+    <div class="container-small">
+    <a href="{% url 'lista_projetos' %}" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15,18 9,12 15,6"></polyline>
+        </svg>
+        Voltar aos projetos
+    </a>
+    <div class="project-header">
+        <h1 class="project-detail-title">{{projeto.título}}</h1>
+        <p class="project-detail-description">{{projeto.descricao}}</p>
+    </div>
+
+    <div class="project-images">
+        <h2 class="section-title">Capturas de Tela</h2>
+                <div class="images-grid">
+                    {% for imagem in projeto.imagem %}
+                    <div class="image-placeholder">
+                        <img src="{{imagem}}" class="placeholder-content">
+                    </div>
+                    {% endfor %}
+                </div>
+    </div>
+
+    <div class="project-details">
+        <div class="details-main">
+            <div class="detail-card">
+                <h2 class="section-title">Sobre o Projeto</h2>
+                <div class="detail-content">
+                    {{projeto.sobre|linebreaksbr}}
+                </div>
+            </div>
+
+            <div class="detail-card">
+                <h2 class="section-title">Principais Funcionalidades</h2>
+                <ul class="features-list">
+                    {% for funcionalidades in projeto.funcionalidades %}
+                        <li>{{funcionalidades}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="details-sidebar">
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">Tecnologias</h3>
+                <div class="tech-tags">
+                    {% for tecnologia in projeto.tecnologia %}
+                        <span class="tag">{{tecnologia}}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">Links</h3>
+                <div class="sidebar-links">
+                    <a href="{{projeto.github}}" class="sidebar-link" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            {% include 'components/icons/github_icon.html' %}
+                        </svg>
+                        Repositório
+                    </a>
+                </div>
+            </div>
+
+            <div class="cta-card">
+                <h3 class="cta-title">Gostou do projeto?</h3>
+                <p class="cta-description">Entre em contato para conversarmos e fazermos Networking!</p>
+                <div class="cta-buttons">
+                    {% include 'components/botao_cv.html' with classe='btn btn-primary small' %}
+                    {% include 'components/botao_lk.html' with link=links.linkedin classe='btn btn-secondary small' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Projetos | Meu Portfolio{% endblock %}
+{% block content %}
+    <div class="container">
+    <section>
+        <h1 class="page-title">Meus Projetos</h1>
+        <p class="page-description">
+            Projetos que eu desenvolvi. Cada um representa um desafio superado e uma oportunidade de aprendizado.
+        </p>
+
+        <div class="projects-grid">
+            {% for key, dados in projetos.items %}
+            <div class="project-card">
+                <h3 class="project-title">{{dados.título}}</h3>
+                <p class="project-description">{{dados.descricao}}</p>
+
+                <div class="project-tags">
+                     {% for tecnologia in dados.tecnologia %}
+                    <span class="tag">{{tecnologia}}</span>
+                    {% endfor %}
+                </div>
+
+                <div class="project-links">
+                    <a href={{dados.github}} class="project-link" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            {% include 'components/icons/github_icon.html' %}
+                        </svg>
+                        Code
+                    </a>
+                    <a href="{% url 'detalhes_projeto' id_projeto=key %}" class="project-link emerald">Detalhes</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}

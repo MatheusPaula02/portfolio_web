@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Bem Vindo! | Meu Portfolio{% endblock %}
+{% block content %}
+<div class="container">
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Bem-vindo ao meu Portfólio</h1>
+            <p class="hero-description">
+                Aqui você irá conhecer um pouco mais sobre mim e os meus projetos que venho desenvolvendo. Vamos lá?
+            </p>
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <div class="terminal-button red"></div>
+                        <div class="terminal-button yellow"></div>
+                        <div class="terminal-button green"></div>
+                    </div>
+                    <span class="terminal-title">python</span>
+                </div>
+                <div class="terminal-content">
+                    <div class="terminal-line">
+                        <span class="prompt">&gt;&gt;&gt;</span>
+                        <span class="function">print</span><span class="parenthesis">(</span><span class="string">"Conhecimentos em "</span><span class="operator"> + </span><span class="string" id="dynamic-string"></span><span class="parenthesis">)</span>
+                    </div>
+                    <div class="terminal-output">
+                        Conhecimentos em <span class="output-text" id="typing-text"></span><span class="cursor">|</span>
+                    </div>
+                </div>
+            </div>
+            <div class="action-buttons">
+                {% include 'components/botao_cv.html' with classe='btn btn-primary' %}
+                {% include 'components/botao_lk.html' with link=links.linkedin classe='btn btn-secondary' %}
+            </div>
+        </div>
+    </section>
+    <section class="quick-links">
+        <a href="{% url 'sobre' %}" class="quick-link-card">
+            <div class="card-icon blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                {% include 'components/icons/cmd_icon.html' %}
+                </svg>
+            </div>
+            <h3 class="card-title">Sobre mim</h3>
+            <p class="card-description">Conheça minha trajetória e habilidades</p>
+        </a>
+        <a href="{% url 'lista_projetos' %}" class="quick-link-card">
+            <div class="card-icon emerald">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                {% include 'components/icons/github_icon.html' %}
+                </svg>
+            </div>
+            <h3 class="card-title">Projetos</h3>
+            <p class="card-description">Explore meus trabalhos e contribuições</p>
+        </a>
+    </section>
+</div>
+{% endblock %}

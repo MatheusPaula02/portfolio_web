@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Sobre | Meu Portfolio{% endblock %}
+{% block content %}
+    <div class="container-small">
+    <section class="section">
+        <h1 class="page-title">Sobre mim</h1>
+        <p class="page-description">
+            <img src="{% static 'img/Foto_Perfil.png' %}"
+                style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; float: left; margin-right: 20px;">
+            {{sobre.descricao|linebreaksbr}}
+        </p>
+    </section>
+    <section class="section">
+        <h2 class="section-title">Habilidades</h2>
+        <div class="skills-grid">
+            {% for chave, dados in habilidades.items %}
+            <div class="skill-card">
+                <div class="skill-icon yellow">
+                    <span class="emoji">{{dados.emoji}}</span>
+                </div>
+                <h3 class="skill-name">{{dados.nome}}</h3>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="section">
+        <h2 class="section-title">Contato</h2>
+        <div class="contact-card">
+            <div class="contact-info">
+                {% for contato in contatos %}
+                <div class="contact-item">
+                    <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        {% include "components/icons/"|add:contato.icone %}
+                    </svg>
+                    <span>{{contato.texto}}</span>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="contact-item">
+                {% include 'components/botao_cv.html' with classe='btn btn-primary'  %}
+                {% include 'components/botao_lk.html' with link=links.linkedin classe='btn btn-secondary' %}
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

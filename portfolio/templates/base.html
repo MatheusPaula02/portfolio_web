@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Portfólio{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="min-h-screen bg-blue-50">
+        <div class="header">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                             {% include 'components/icons/cmd_icon.html' %}
+                    </svg>
+                    <span class="brand-text">Matheus de Paula</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                    <li><a href="{% url 'sobre' %}" class="nav-link">Sobre</a></li>
+                    <li><a href="{% url 'lista_projetos' %}" class="nav-link">Projetos</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <main id="main-content" class="main">
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <div class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p class="footer-text">© 2025 Matheus de Paula. Todos os direitos reservados.</p>
+                    <div class="footer-links">
+                        <a href="{{links.github}}" class="footer-link" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                {% include 'components/icons/github_icon.html' %}
+                            </svg>
+                        </a>
+                        <a href="{{links.linkedin}}" class="footer-link" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                {% include 'components/icons/linkedin_icon.html' %}
+                            </svg>
+                        </a>
+                        <a href="mailto:{{links.email}}" class="footer-link" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                {% include 'components/icons/email_icon.html' %}
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    const texts = {{ habilidades_js|safe }};
+    </script>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
