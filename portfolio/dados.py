@@ -8,6 +8,16 @@ links = {
                 'personificacao.jpg',
                 'principal.png'
             },
+            'imagem_excel': {
+                'formulario.png',
+                'dashboard.png',
+            },
+            'imagem_portf': {
+                'home.png',
+                'sobre.png',
+                'projetos.png',
+                'detalhes.png',
+            },
         },
 }
 
@@ -119,6 +129,44 @@ projetos = {
 
             'Cada dashboard foi elaborado com base em fontes de dados reais ou fictícias, demonstrando como dados '
             'podem se transformar em insights estratégicos.'
+        ,
+    },
+        'projeto3': {
+        'título': 'Controle Cantoneiras - Dashboard (Excel VBA)',
+        'descricao': 'Dashboard interativo em Excel VBA para controle de cantoneiras, com formulário automatizado para registro e atualização dos dados.',
+        'tecnologia': ('Excel','VBA'),
+        'github': 'https://github.com/MatheusPaula02/excel_vba_dashboard.git',
+        'funcionalidades': (
+            'Processamento Automatizado via VBA: Ao confirmar o envio, o sistema grava as informações na planilha e atualiza automaticamente todos os relatórios, gráficos e indicadores;',
+            'Dashboard Inteligente e Dinâmica: Painel visual conectado às Tabelas Dinâmicas e Gráficos Dinâmicos, permitindo análise instantânea;',
+            'Formulário Interativo de Entrada: Interface intuitiva para o usuário inserir dados.'
+        ),
+        'imagem': links['imagem_port']['imagem_excel'],
+        'sobre':
+            'Projeto desenvolvido durante minha atuação como Jovem Aprendiz de Logística, com o objetivo de automatizar '
+            'o registro e análise de dados operacionais no Excel.\n\n'
+
+            'A solução, criada em VBA, permite o preenchimento de informações por meio de um formulário interativo e atualiza '
+            'automaticamente uma dashboard com gráficos e indicadores de desempenho.'
+
+        ,
+    },
+        'projeto4': {
+        'título': 'Portfólio Pessoal - WEB',
+        'descricao': 'Portfólio criado para publicação de projetos e saber um pouco mais sobre mim.',
+        'tecnologia': ('HTML','Python','CSS','JavaScript'),
+        'github': 'https://github.com/MatheusPaula02/portfolio_web.git',
+        'funcionalidades': (
+            'Apresentação Pessoal: Seção que destaca minha trajetória e principais habilidades técnicas;',
+            'Portfólio de Projetos: Galeria com descrições e links para código e detalhes;',
+            'Área para entrar em contato (Email, Linkedin, Github), e com a possibilidade de download do meu currículo.',
+        ),
+        'imagem': links['imagem_port']['imagem_portf'],
+        'sobre':
+            'Este portfólio é uma representação visual e funcional das minhas habilidades e experiências, onde '
+            'publicarei todos os projetos voltados a Análise/Ciências/Engenharia de dados que estarei desenvolvendo.\n\n' 
+
+            'Sinta-se à vontade para explorar, conhecer meus projetos e entrar em contato para oportunidades.'
         ,
     },
 
