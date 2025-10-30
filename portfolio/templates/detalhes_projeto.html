@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}{{projeto.título}}Detalhes | Meu Portfolio{% endblock %}
 {% block content %}
+{% load static %}
     <div class="container-small">
     <a href="{% url 'lista_projetos' %}" class="back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -18,7 +19,7 @@
                 <div class="images-grid">
                     {% for imagem in projeto.imagem %}
                     <div class="image-placeholder">
-                        <img src="{{imagem}}" class="placeholder-content">
+                        <img src="{% static 'img/'|add:imagem %}"  class="placeholder-content">
                     </div>
                     {% endfor %}
                 </div>

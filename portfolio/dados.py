@@ -4,9 +4,9 @@ links = {
         'email': 'paulaemanuel009@gmail.com',
         'imagem_port': {
             'imagem_bi': {
-                'https://raw.githubusercontent.com/MatheusPaula02/PowerBI_Portfolio/refs/heads/main/screenshots/analise_estatistica_cursos_online/avaliacao.png',
-                'https://raw.githubusercontent.com/MatheusPaula02/PowerBI_Portfolio/refs/heads/main/screenshots/analise_estatistica_cursos_online/personificacao.png',
-                'https://raw.githubusercontent.com/MatheusPaula02/PowerBI_Portfolio/refs/heads/main/screenshots/analise_estatistica_cursos_online/principal.png'
+                'avaliacao.png',
+                'personificacao.jpg',
+                'principal.png'
             },
         },
 }
